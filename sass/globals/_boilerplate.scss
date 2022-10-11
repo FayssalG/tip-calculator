@@ -1,0 +1,52 @@
+html{
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*,*::after,*::before{
+    box-sizing: inherit;
+    margin-top: 0;
+}
+
+body{
+    margin: 0;
+    background-color: var(--light-grayish-cyan);
+    font-family:'Space Mono', monospace;
+}
+
+
+
+main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    cursor: pointer;
+    
+}
+button, input{
+    border-radius: 5px;
+    background-color: unset;
+    border: none;
+}
+
+input{
+    &:focus{
+        outline: 1px solid var(--strong-cyan);
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}

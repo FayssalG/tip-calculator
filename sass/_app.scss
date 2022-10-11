@@ -1,0 +1,220 @@
+@use 'utils' as *;
+
+h1{
+    margin-bottom: 4rem;
+    color: var(--very-dark-cyan);
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+    letter-spacing: .7rem;
+}
+
+.app{
+    border-radius: 20px;
+    background-color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+    max-width: 490px;
+    gap: 1rem;
+
+    
+    
+ 
+
+    .input , .output{
+
+        border-radius: 15px;
+    }
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 1.5rem;
+
+    h2,label{
+        margin-bottom: .7rem;
+        color: var(--grayish-cyan);
+    }
+
+    input{
+        color: var(--very-dark-cyan);
+        background-color: var(--very-light-grayish-cyan);
+    }
+
+
+    .bill , .people {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        input{
+            width: 100%;
+            text-align: right;
+            padding: 0 .7rem;
+            height: 3rem;
+        }
+        .input-container{
+            position: relative;
+            &::before{
+                position: absolute;
+                bottom: 15%;
+                left: 1rem;
+            }
+        }
+
+        .input-container-error{
+            input{
+                border:1px solid var(--error);
+            }
+            &::after{
+                position: absolute;
+                content: "Can't be zero ";
+                top: -84%;
+                color: var(--error);
+                right: .5rem;
+                font-size: .9rem;
+            }
+        }
+    }
+
+    .bill .input-container::before {
+        content: url('../assets/icon-dollar.svg');
+    }
+    .people .input-container::before{
+        content: url('../assets/icon-person.svg');
+    }
+
+    .tip{
+        width: 100%;
+        margin-top: 1rem;
+        &__selectors{
+            display: flex;
+            flex-direction: row;
+            max-height: 500px;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            button , input{
+                padding: 0 1rem;
+                cursor: pointer;
+                min-width: 130px;
+                max-width: 130px;
+                height: 50px;
+           
+            }
+
+            
+            input{
+                transition: border-color 200ms ease;
+                border: solid 1px transparent;
+                &:hover{
+                    border-color: var(--strong-cyan);
+                }
+                &::placeholder{
+                    color: var(--grayish-cyan);
+                }
+            }
+            
+            button{
+                transition: background-color ease 200ms ;
+                color: white;
+                background-color: var(--very-dark-cyan);
+                &:hover{
+                    color: var(--very-dark-cyan);
+                    background-color: var(--strong-cyan);
+                }
+            }
+
+            .button-active{
+                background-color: var(--strong-cyan);
+                color: var(--very-dark-cyan);
+            }
+            .input-active{
+                border: 1px solid var(--strong-cyan);
+            }
+        }     
+    }
+
+
+}
+
+
+.output{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: var(--very-dark-cyan);
+    gap: 2rem;
+    padding: 2rem;
+    button{
+        background-color: var(--strong-cyan);
+        height: 2.5rem;
+    }
+    
+    &__content{
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+    .tip-amount , .total{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h2{
+            position: relative;
+            color: white;
+            &::after{
+                content: '/ person';
+                font-size: .7rem;
+                min-width: 100px;
+                color: var(--grayish-cyan);
+                position: absolute;
+                bottom: -1rem;
+                left: 0;
+            }   
+        }
+
+        p{
+            color: var(--strong-cyan);
+        }
+
+        h2 , p{
+            margin-bottom: 0;
+        }
+    }
+
+    .reset{
+        text-transform: uppercase;
+        color: var(--very-dark-cyan);
+        &:hover{
+            filter: brightness(150%);
+        }
+    }
+    
+}
+
+@include desktop{
+    .app{
+        justify-content: space-between;
+        height:70vh ;
+        .input{
+            width: 50%;
+        }
+
+        .output{
+            width: 45%;
+        }
+        max-width: 912px;
+        flex-direction: row;
+        
+
+    }
+}

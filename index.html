@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/style.css">
+
+    <script defer src="./script.js"></script>
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <main>
+        <h1>SPLI<br>TTER</h1>
+        <div class="app">
+            <div class="input">
+                <div class="bill">
+                    <label for="bill">Bill</label>
+                    <div class="input-container">
+                        <input type="number" id="bill" placeholder="0" minlength="0" maxlength="6"></input>
+                    </div>
+                </div>
+                <div class="tip">
+                    <h2>Select Tip %</h2>
+                    <div class="tip__selectors">
+                        <button class="tip-selector" data-value="5">5%</button>
+                        <button class="tip-selector" data-value="10">10%</button>
+                        <button class="tip-selector" data-value="15">15%</button>
+                        <button class="tip-selector" data-value="25">25%</button>
+                        <button class="tip-selector" data-value="50">50%</button>
+                        <input  class="tip-selector" type="number" placeholder="Custom">
+                    </div>
+                    
+                </div>
+
+                <div class="people">
+                    <label for="people">Number of people</label>
+                    <div class="input-container">
+                        <input  type="number" id="people" placeholder="0" minlength="0" maxlength="6">
+                    </div>
+                </div>
+            </div>
+            <div class="output">
+
+                <div class="output__content">
+                    <div class="tip-amount">
+                        <h2>Tip amount</h2>
+                        <p class="tip-amount-value">$0.00</p>
+                    </div>
+                    <div class="total">
+                        <h2>Total</h2>
+                        <p class="total-value">$0.00</p>
+                    </div>
+                </div>
+            
+                <button class="reset">Reset</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
